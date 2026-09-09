@@ -1,0 +1,31 @@
+# Code-only branch. Everything that is NOT buildable source is excluded so the
+# repo can never get contaminated by generated data / analysis / Ghidra projects.
+# (docs/generated was 4.6GB, tools_schema 1.8GB — those never belong here.)
+
+# docs + analysis + design notes (markdown/text)
+docs/
+*.md
+!/README.md
+*.tsv
+
+# generated data (regenerable; not needed to build)
+
+src/generated/
+/src/generated/
+
+# tooling, ghidra projects, analysis dumps, recon
+tools/
+tools_schema/
+dumps/
+source_recon/
+
+# build outputs / logs / binaries
+*.dll
+*.exe
+*.o
+*.obj
+*.log
+/build/
+
+# box deployment (private infra, no value to a reader)
+publish.sh
